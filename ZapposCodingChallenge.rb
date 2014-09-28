@@ -2,7 +2,10 @@ require 'net/http'
 require 'json'
 
 def printCombinations(numProducts, totalPrice)
-  puts "Desired number of products cannot be greater than 100" if numProducts > 100
+  if numProducts > 100
+    puts "Desired number of products cannot be greater than 100" 
+    return
+  end
   pageNo = (((totalPrice / numProducts) / 500.0) * 1100).round if (totalPrice / numProducts) < 500.0
   pageNo = 1100 if (totalPrice / numProducts) >= 500.0
   productArray = []
