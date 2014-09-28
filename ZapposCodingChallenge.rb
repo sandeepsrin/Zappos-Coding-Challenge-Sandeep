@@ -26,7 +26,6 @@ def printCombinations(numProducts, totalPrice)
     pageNo = pageNo + 10 and less = true if sum < totalPrice
     pageNo = pageNo - 10 and greater = true if sum > totalPrice    
   end
-  #productArray.each { |el| puts "#{el["productName"]} #{el["price"]} #{el["productId"]} #{el["productUrl"]}" }
-  productArray.each { |el| sprintf("%20s", el["productName"]) } 
+  productArray.each { |el| puts "#{el["productName"]} #{el["price"]} #{el["productId"]} #{el["productUrl"]}" }
 end
 printCombinations(ARGV[0].to_f, ARGV[1].to_f)
